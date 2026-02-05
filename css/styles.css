@@ -182,8 +182,41 @@ h2{font-size:1.5rem;margin-bottom:0.75rem}
 .map-container iframe, .responsive-iframe{width:100%;height:100%;display:block;border:0}
 
 @media (max-width:900px){
+  .container{padding:1rem}
+  .contact{grid-template-columns:1fr}
+  .contact-card{max-width:100vw}
   .contact-card .contact-content{grid-template-columns:1fr}
-  .map-container{min-height:300px}
+  .contact-info{padding:0.85rem}
+  .map-container, .contact-map{min-height:220px}
+  .hero{padding:2rem 0}
+  .hero-grid{grid-template-columns:1fr;gap:1rem}
+  .hero-card{padding:1rem;text-align:center}
+  .hero h1{font-size:1.4rem}
+  .lead{font-size:1rem}
+  .hero-features{flex-direction:column;gap:0.5rem;align-items:center}
+  .hero-media{margin-top:1rem;max-width:100%;height:auto}
+  .hero-media img{max-height:240px}
+  .btn{padding:0.65rem 1rem;font-size:1rem}
+  .nav-toggle{display:block}
+  .section-header{flex-direction:column;gap:0.6rem}
+  .section-title{font-size:1.15rem;text-align:center}
+  .grid{grid-template-columns:1fr}
+  .card, .service-card, .content-card{padding:1rem}
+  .about .content-card{padding:1.2rem;text-align:center;border-radius:14px;box-shadow:0 4px 18px rgba(2,6,23,0.08)}
+  .about .content-card p, .about .content-card ul{margin-left:0;margin-right:0;text-align:left}
+  .about .content-card ul{padding-left:1.1rem}
+  .gallery{padding-top:0.4rem;padding-bottom:0.4rem}
+  .masonry{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.75rem;column-count:unset;column-gap:unset}
+  .masonry-item{margin:0;width:100%;break-inside:avoid}
+  .masonry-item img{width:100%;height:100%;min-height:160px;aspect-ratio:4/3;object-fit:cover;border-radius:10px;box-shadow:0 2px 12px rgba(2,6,23,0.08);margin-bottom:0}
+  .sponsors-marquee{padding:0.6rem}
+  .sponsors-track img{height:42px;max-height:42px}
+  .contact-addr .info-item{padding:0.45rem;gap:0.5rem}
+  .contact-addr .info-item svg{width:28px;height:28px}
+  .contact-addr .info-label{font-size:0.78rem}
+  .social-link{width:32px;height:32px}
+  .footer-inner{padding:0.6rem 0;font-size:0.92rem}
+  .logo{width:48px;height:48px}
 }
 
 /* improve overall spacing for the contact section */
@@ -218,24 +251,36 @@ body::after{
   background: rgba(255,255,255,0.45);
 }
 
-@media (max-width:900px){
-  .contact{grid-template-columns:1fr}
-  .nav-toggle{display:block}
-  .container{padding:1rem}
-  .hero{padding:2.25rem 0}
-  /* slightly smaller logo on narrow screens */
-  .logo{width:56px;height:56px}
-  .hero-card{padding:1rem}
+@media (prefers-reduced-motion: reduce){body::before{transform:none}}
+
+@media (max-width:700px){
+  body::before{opacity:0; background-size:0; background-image:none}
+  body::after{background: rgba(255,255,255,0.6)}
+  .container{padding:0.65rem}
+  .hero{padding:1.2rem 0}
+  .hero-grid{gap:0.8rem}
+  .hero-card{padding:0.9rem}
+  .hero h1{font-size:1.2rem}
+  .lead{font-size:0.95rem}
+  .hero-media img{max-height:140px}
+  .sponsors-track img{height:32px;max-height:32px}
+  .section-title{font-size:1.02rem}
+  .card, .service-card, .content-card{padding:0.7rem}
+  .about .content-card{padding:0.9rem;text-align:center;border-radius:10px;box-shadow:0 2px 8px rgba(2,6,23,0.08)}
+  .about .content-card ul{padding-left:0.7rem}
+  .gallery{padding-top:0.3rem;padding-bottom:0.3rem}
+  .masonry{grid-template-columns:repeat(2,minmax(0,1fr));gap:0.5rem}
+  .masonry-item img{min-height:130px;border-radius:8px;box-shadow:0 1px 6px rgba(2,6,23,0.08)}
+  .contact-info{padding:0.55rem}
+  .contact-addr .info-item{padding:0.3rem;gap:0.35rem}
+  .contact-addr .info-item svg{width:22px;height:22px}
+  .contact-addr .info-label{font-size:0.74rem}
+  .map-container, .contact-map{min-height:200px}
+  .social-link{width:28px;height:28px}
+  .footer-inner{padding:0.3rem 0;font-size:0.85rem}
+  .logo{width:36px;height:36px}
   /* mobile nav slide-down */
   .nav{position:absolute;top:64px;right:16px;background:#fff;border-radius:10px;padding:0.5rem;box-shadow:0 12px 36px rgba(2,6,23,0.12);flex-direction:column;max-height:0;overflow:hidden;transition:max-height .36s ease}
   .nav.show{max-height:420px}
   .nav a{padding:0.6rem 0.9rem}
-}
-
-@media (prefers-reduced-motion: reduce){body::before{transform:none}}
-
-@media (max-width:700px){
-  /* On small screens, lower the background opacity to avoid heavy data and improve legibility */
-  body::before{opacity:.65; background-size: 300px; background-position: center 22%}
-  body::after{background: linear-gradient(180deg, rgba(0,0,0,0.36) 0%, rgba(0,0,0,0.18) 40%, rgba(0,0,0,0.06) 100%)}
 }
