@@ -10,6 +10,14 @@ navToggle && navToggle.addEventListener('click', ()=>{
   }
 });
 
+// Dark mode toggle
+function toggleMode(){
+  document.body.classList.toggle('dark');
+}
+
+const themeToggle = document.getElementById('themeToggle');
+themeToggle && themeToggle.addEventListener('click', toggleMode);
+
 // Year in footer
 document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
 

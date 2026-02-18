@@ -16,6 +16,7 @@ body{
   color: #0f172a;
   line-height: 1.6;
   -webkit-font-smoothing:antialiased;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 .container{max-width:1150px;margin:0 auto;padding:2rem}
 /* modest spacing for sections and anchor offset for sticky header */
@@ -37,6 +38,16 @@ section{padding:3rem 0;scroll-margin-top:84px}
 .nav a{color:var(--muted);text-decoration:none;padding:0.4rem 0.6rem;border-radius:8px;font-weight:600}
 .nav a:hover{color:#043bfb;background:rgba(11,110,253,0.06);box-shadow:0 6px 18px rgba(11,110,253,0.04)}
 .nav-toggle{display:none;background:none;border:0;font-size:1.35rem}
+.theme-toggle{
+  background: transparent;
+  border: 1px solid rgba(11,110,253,0.12);
+  border-radius: 10px;
+  padding: 0.35rem 0.55rem;
+  font-size: 1.05rem;
+  cursor: pointer;
+  color: var(--accent);
+}
+.theme-toggle:hover{background:rgba(11,110,253,0.08)}
 
 /* smooth scrolling when nav links are clicked */
 html{scroll-behavior:smooth}
@@ -251,6 +262,35 @@ body::after{
   background: rgba(255,255,255,0.45);
 }
 
+/* Dark mode */
+body.dark{background:#121212;color:#ffffff}
+body.dark .site-header{background:#121212;border-bottom:1px solid rgba(255,255,255,0.08)}
+body.dark .nav a{color:#cbd5f5}
+body.dark .nav a:hover{color:#ffffff;background:rgba(255,255,255,0.08)}
+body.dark .nav a.active{color:#ffffff;background:rgba(255,255,255,0.12)}
+body.dark .card,
+body.dark .hero-card,
+body.dark .contact-info,
+body.dark .contact-addr .info-item,
+body.dark .contact-form,
+body.dark .office-info,
+body.dark .map-container,
+body.dark .contact-map,
+body.dark .sponsors-marquee{background:#1e1e1e;box-shadow:none;border:1px solid rgba(255,255,255,0.06)}
+body.dark .lead,
+body.dark .bullets,
+body.dark .info-item p,
+body.dark .contact-desc,
+body.dark .contact-addr .info-label,
+body.dark .footer-inner{color:rgba(255,255,255,0.7)}
+body.dark .contact-addr a{color:#9adcf3}
+body.dark .social-link{background:#1e1e1e;border-color:rgba(255,255,255,0.08);color:#9adcf3}
+body.dark .section-divider{background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent)}
+body.dark .btn.ghost{border-color:rgba(255,255,255,0.2);color:#cfe9ff}
+body.dark .hero-features li{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.8)}
+body.dark::before{opacity:0.2;filter:grayscale(1) brightness(0.4)}
+body.dark::after{background:rgba(0,0,0,0.55)}
+
 @media (prefers-reduced-motion: reduce){body::before{transform:none}}
 
 @media (max-width:700px){
@@ -284,3 +324,4 @@ body::after{
   .nav.show{max-height:420px}
   .nav a{padding:0.6rem 0.9rem}
 }
+  
